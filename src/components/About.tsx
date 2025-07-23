@@ -56,7 +56,7 @@ const About: React.FC = () => {
           
           <div className="about-image">
             <div className="headshot-container">
-              <img src="/headshot.jpeg" alt="Morgan's Professional Headshot" className="headshot-img" />
+              <img src={`${process.env.PUBLIC_URL}/headshot.jpeg`} alt="Morgan's Professional Headshot" className="headshot-img" />
             </div>
           </div>
         </div>

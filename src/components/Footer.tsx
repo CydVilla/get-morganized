@@ -13,13 +13,13 @@ const Footer: React.FC = () => {
               Transform your career with our expert guidance.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <span>📘</span>
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <span>📷</span>
               </a>
-              <a href="#" aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <span>💼</span>
               </a>
             </div>
@@ -59,8 +59,8 @@ const Footer: React.FC = () => {
           <div className="footer-bottom-content">
             <p>&copy; 2024 Get Morganized LLC. All rights reserved.</p>
             <div className="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
             </div>
           </div>
         </div>

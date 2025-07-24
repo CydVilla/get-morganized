@@ -21,10 +21,7 @@ const Footer: React.FC = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span>💼</span></a>
           </div>
         </div>
-        <div className="footer-links-row">
-          <a href="#about">About</a>
-          <a href="#reviews">Reviews</a>
-        </div>
+        {/* Removed footer-links-row for compactness */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <span className="footer-copyright">&copy; {new Date().getFullYear()} Get Morganized LLC. All rights reserved.</span>

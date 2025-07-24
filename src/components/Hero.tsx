@@ -2,6 +2,13 @@ import React from 'react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -18,8 +25,7 @@ const Hero: React.FC = () => {
             Get noticed by employers and land your dream job with a compelling, ATS-optimized resume.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Get Started Today</button>
-            <button className="btn btn-secondary">View Samples</button>
+            <button className="btn btn-primary" onClick={scrollToContact}>Get Started Today</button>
           </div>
           <div className="hero-stats">
             <div className="stat">
@@ -31,7 +37,7 @@ const Hero: React.FC = () => {
               <span className="stat-label">Success Rate</span>
             </div>
             <div className="stat">
-              <span className="stat-number">4.9★</span>
+              <span className="stat-number">5.0★</span>
               <span className="stat-label">Google Rating</span>
             </div>
           </div>

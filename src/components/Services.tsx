@@ -33,6 +33,13 @@ const Services: React.FC = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="services" className="services">
       <div className="container">
@@ -48,7 +55,9 @@ const Services: React.FC = () => {
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <div className="service-price">{service.price}</div>
-              <button className="btn btn-outline">Learn More</button>
+              <button className="btn btn-outline" onClick={scrollToContact}>
+                Get Started
+              </button>
             </div>
           ))}
         </div>
@@ -56,7 +65,9 @@ const Services: React.FC = () => {
         <div className="services-cta">
           <h3>Ready to Transform Your Career?</h3>
           <p>Get started with a free consultation to discuss your career goals</p>
-          <button className="btn btn-primary">Book Free Consultation</button>
+          <button className="btn btn-primary" onClick={scrollToContact}>
+            Book Free Consultation
+          </button>
         </div>
       </div>
     </section>

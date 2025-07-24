@@ -8,22 +8,17 @@ const About: React.FC = () => {
         <div className="about-content">
           <div className="about-text">
             <div className="section-header">
-              <h2>About Get Morganized</h2>
-              <p>Your trusted partner in career transformation</p>
+              <h2>About Get Morganized LLC</h2>
+              <p>A personalized service.</p>
             </div>
             
             <div className="about-description">
               <p>
-                At Get Morganized, we believe that every professional deserves a resume that truly represents 
-                their potential. Our founder, Morgan, brings years of experience in career development and 
-                resume writing to help you stand out in today's competitive job market.
+                Get Morganized LLC was founded in February of 2021 based on the idea that everyone deserves a special level of care and attention when crafting their resumé in order to stand out in today's competitive job market.
               </p>
               
               <p>
-                We specialize in creating compelling, ATS-optimized resumes that not only pass through 
-                applicant tracking systems but also capture the attention of hiring managers. Our approach 
-                combines industry best practices with personalized attention to ensure your resume tells 
-                your unique story effectively.
+                Morgan has worked with tons of clients ranging from Michelin Star Chefs to Mechanical Engineers. She specializes in creating compelling, ATS-optimized resumes that not only pass through applicant tracking systems but also capture the attention of hiring managers. Morgan's approach combines industry best practices with personalized attention to ensure each client's resumé tells their unique story effectively.
               </p>
               
               <div className="about-features">
@@ -50,6 +45,23 @@ const About: React.FC = () => {
                     <p>Quick delivery without compromising on quality</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="meet-morgan">
+                <h3>Meet Morgan</h3>
+                <p>
+                  Morgan is born and raised in Westchester County, NY. She is a current law student at Pace University School of Law. As an entrepreneur, she has worked with over 200 clients from all ages and backgrounds to craft one-of-a-kind resumés that highlight each of their unique skills and accomplishments.
+                </p>
+              </div>
+
+              <div className="community-partnerships">
+                <h3>Community Partnerships</h3>
+                <p>
+                  Get Morganized LLC has provided career readiness workshops to various nonprofit organizations including Family Services of Westchester (FSW), 914United, NewComm, and the Kings County District Attorney's Office Re-Entry Bureau. Through these partnerships, Morgan teaches the fundamentals of resumé writing and provides professional resumés to individuals who are re-entering the workforce after being incarcerated or who are considered at-risk.
+                </p>
+                <p>
+                  For more information on workshops and community partnerships, please email <a href="mailto:hello@getmorganizedtoday.com">hello@getmorganizedtoday.com</a> or call Morgan at <a href="tel:914-786-2282">914-786-2282</a>
+                </p>
               </div>
             </div>
           </div>

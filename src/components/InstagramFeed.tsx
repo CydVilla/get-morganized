@@ -17,7 +17,9 @@ const InstagramFeed: React.FC = () => {
         <div className="section-header">
           <h2>Follow Us on Instagram</h2>
         </div>
-        <div className="elfsight-app-3e74aa70-a0c7-4f20-be7d-958837213359" data-elfsight-app-lazy></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
+          <div className="elfsight-app-3e74aa70-a0c7-4f20-be7d-958837213359" data-elfsight-app-lazy></div>
+        </div>
       </div>
     </section>
   );

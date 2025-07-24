@@ -19,11 +19,40 @@
   height: 80px;
 }
 
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .logo-img {
   height: 60px;
   width: auto;
   display: block;
   max-width: 200px;
+}
+
+.logo-img.prominent {
+  height: 70px;
+  width: auto;
+  display: block;
+  margin-right: 0.5rem;
+  box-shadow: 0 2px 12px rgba(96, 181, 131, 0.08);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.navbar-title {
+  font-family: 'Komika Axis', Arial, sans-serif !important;
+  color: #60b583 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .nav-list {
@@ -114,5 +143,15 @@
 
   .nav-list li:last-child a {
     border-bottom: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-img.prominent {
+    height: 48px;
+  }
+  .navbar-title {
+    font-size: 1rem;
+    letter-spacing: 1px;
   }
 } 

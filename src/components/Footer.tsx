@@ -4,64 +4,30 @@ import './Footer.css';
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Get Morganized</h3>
-            <p>
-              Professional resume writing services to help you stand out in today's competitive job market. 
-              Transform your career with our expert guidance.
-            </p>
-            <div className="social-links">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <span>📘</span>
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <span>📷</span>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <span>💼</span>
-              </a>
-            </div>
+      <div className="container footer-flex">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <span className="footer-logo-text">GET MORGANIZED LLC</span>
+            <p className="footer-tagline">Professional resume writing services to help you stand out in today's competitive job market.</p>
           </div>
-
-          <div className="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#services">Professional Resume Writing</a></li>
-              <li><a href="#services">Cover Letter Writing</a></li>
-              <li><a href="#services">LinkedIn Profile Optimization</a></li>
-              <li><a href="#services">Resume Review & Critique</a></li>
-            </ul>
+          <div className="footer-contact">
+            <p><span role="img" aria-label="phone">📞</span> <a href="tel:914-786-2282">914-786-2282</a></p>
+            <p><span role="img" aria-label="email">✉️</span> <a href="mailto:info@getmorganizedtoday.com">info@getmorganizedtoday.com</a></p>
+            <p><span role="img" aria-label="location">📍</span> Greater New York City Area</p>
           </div>
-
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#reviews">Reviews</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
-            <h4>Contact Info</h4>
-            <div className="contact-info">
-              <p>📞 914-786-2282</p>
-              <p>✉️ info@getmorganizedtoday.com</p>
-              <p>📍 Greater New York City Area</p>
-            </div>
+          <div className="footer-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span>📘</span></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span>📷</span></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span>💼</span></a>
           </div>
         </div>
-
+        <div className="footer-links-row">
+          <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
+        </div>
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2024 Get Morganized LLC. All rights reserved.</p>
-            <div className="footer-links">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
-            </div>
+            <span className="footer-copyright">&copy; {new Date().getFullYear()} Get Morganized LLC. All rights reserved.</span>
           </div>
         </div>
       </div>

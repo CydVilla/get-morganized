@@ -7,22 +7,18 @@ const Contact: React.FC = () => {
       <div className="container">
         <div className="section-header">
           <h2>Get Started</h2>
-          <p>Fill out the form below to get started with Get Morganized LLC. Upload your resume, share your goals, and Morgan will be in touch!</p>
+          <p>Click the button below to fill out the Get Morganized LLC form and upload your resume. <strong>Note:</strong> You’ll need to sign in with a Google account to upload your resume (required by Google Forms).</p>
         </div>
-        <div className="contact-content" style={{ display: 'block', marginTop: '40px' }}>
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSc4MzKDDYBRPR5z2xq8fmnVIKAzlnhSIjKfX-qUNffmhtuCAg/viewform?embedded=true"
-            width="100%"
-            height="1400"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
-            title="Get Morganized Form"
-            style={{ background: 'white', borderRadius: '15px', boxShadow: '0 4px 24px rgba(44,62,80,0.08)' }}
-            allowFullScreen
+        <div className="contact-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px' }}>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc4MzKDDYBRPR5z2xq8fmnVIKAzlnhSIjKfX-qUNffmhtuCAg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ fontSize: '1.3rem', padding: '1.2rem 2.5rem', marginBottom: '2rem' }}
           >
-            Loading…
-          </iframe>
+            Fill Out the Form & Upload Your Resume
+          </a>
         </div>
       </div>
     </section>

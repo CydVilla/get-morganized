@@ -29,12 +29,8 @@ const Hero: React.FC = () => {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-number">500+</span>
+              <span className="stat-number">250+</span>
               <span className="stat-label">Resumes Written</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">95%</span>
-              <span className="stat-label">Success Rate</span>
             </div>
             <div className="stat">
               <span className="stat-number">5.0★</span>

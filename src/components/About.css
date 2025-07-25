@@ -33,12 +33,9 @@
 .feature {
   background: #f8f9fa;
   border-radius: 10px;
-  padding: 1rem 1.2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-  min-width: 180px;
-  flex: 1 1 180px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #2c5aa0;
 }
 
 .feature:last-child {
@@ -78,7 +75,7 @@
 }
 
 .community-partnerships a {
-  color: #60b583;
+  color: #2c5aa0;
   text-decoration: none;
   font-weight: 600;
 }

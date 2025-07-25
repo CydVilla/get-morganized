@@ -107,7 +107,7 @@
 
 .footer-logo-text {
   font-family: 'Komika Axis', Arial, sans-serif;
-  color: #60b583;
+  color: #2c5aa0; /* Changed from #60b583 to professional blue */
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.92rem;
@@ -131,7 +131,7 @@
 }
 
 .footer-contact a {
-  color: #60b583;
+  color: #2c5aa0; /* Changed from #60b583 to professional blue */
   text-decoration: none;
   font-weight: 600;
 }
@@ -150,19 +150,19 @@
   display: inline-block;
   width: 36px;
   height: 36px;
-  background: rgba(96, 181, 131, 0.12);
+  background: rgba(44, 90, 160, 0.12); /* Changed from green to blue */
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #60b583;
+  color: #2c5aa0; /* Changed from #60b583 to professional blue */
   font-size: 1.3rem;
   display: flex;
 }
 
 .footer-social a:hover {
-  background: #60b583;
+  background: #2c5aa0; /* Changed from #60b583 to professional blue */
   color: #fff;
 }
 
@@ -203,6 +203,20 @@
 /* Remove .footer-links-row styles */
 .footer-links-row {
   display: none !important;
+}
+
+.footer-links-row a {
+  color: #2c5aa0; /* Changed from #60b583 to professional blue */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.footer-links-row a:hover {
+  text-decoration: underline;
+  color: #1e4a7a; /* Darker blue for hover */
 }
 
 @media (max-width: 900px) {

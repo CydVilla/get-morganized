@@ -1,3 +1,13 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://getmorganizedtoday.com/sitemap.xml
+
+# Disallow old URLs that don't exist anymore
+Disallow: /contact.html
+Disallow: /meet-morgan.html
+Disallow: /happy-clients.html
+Disallow: /services.html
+Disallow: /about.html

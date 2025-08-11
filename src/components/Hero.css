@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2c5aa0; /* Changed from #5CB883 to a professional blue */
+  background: #60b382; /* Changed from blue to mint green */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  background: linear-gradient(135deg, #2d5a2d 0%, #3a7a3a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,13 +84,13 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #2d5a2d 0%, #3a7a3a 100%);
+  color: white;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(45, 90, 45, 0.3);
 }
 
 .btn-secondary {
@@ -121,7 +121,7 @@
 .stat-number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffd700;
+  color: #2d5a2d;
   margin-bottom: 0.5rem;
 }
 

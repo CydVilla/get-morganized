@@ -1,5 +1,5 @@
 .footer {
-  background: #2c3e50;
+  background: #60b382;
   color: white;
   padding: 10px 0 6px;
 }
@@ -107,7 +107,7 @@
 
 .footer-logo-text {
   font-family: 'Komika Axis', Arial, sans-serif;
-  color: #2c5aa0; /* Changed from #60b583 to professional blue */
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.92rem;
@@ -131,7 +131,7 @@
 }
 
 .footer-contact a {
-  color: #2c5aa0; /* Changed from #60b583 to professional blue */
+  color: white;
   text-decoration: none;
   font-weight: 600;
 }
@@ -150,20 +150,20 @@
   display: inline-block;
   width: 36px;
   height: 36px;
-  background: rgba(44, 90, 160, 0.12); /* Changed from green to blue */
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #2c5aa0; /* Changed from #60b583 to professional blue */
+  color: white;
   font-size: 1.3rem;
   display: flex;
 }
 
 .footer-social a:hover {
-  background: #2c5aa0; /* Changed from #60b583 to professional blue */
-  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
 .footer-bottom {
@@ -192,7 +192,7 @@
 }
 
 .footer-links a:hover {
-  color: #60b583;
+  color: white;
 }
 
 .footer-copyright {
@@ -206,7 +206,7 @@
 }
 
 .footer-links-row a {
-  color: #2c5aa0; /* Changed from #60b583 to professional blue */
+  color: white;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -216,7 +216,7 @@
 
 .footer-links-row a:hover {
   text-decoration: underline;
-  color: #1e4a7a; /* Darker blue for hover */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 900px) {

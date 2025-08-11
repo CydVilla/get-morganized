@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="footer-main">
           <div className="footer-brand">
             <span className="footer-logo-text">GET MORGANIZED LLC</span>
-            <p className="footer-tagline">Professional resume writing services to help you stand out in today's competitive job market.</p>
+            <p className="footer-tagline">Professional resumé writing services to help you stand out in today's competitive job market.</p>
           </div>
           <div className="footer-contact">
             <p><span role="img" aria-label="phone">📞</span> <a href="tel:914-786-2282">914-786-2282</a></p>

@@ -17,7 +17,7 @@ const About: React.FC = () => {
                   <strong>Founded in February 2021</strong>, Get Morganized LLC is based on the idea that everyone deserves a special level of care and attention when crafting their resumé in order to stand out in today's competitive job market.
                 </p>
                 <p>
-                  Morgan has worked with clients ranging from Michelin Star Chefs to Mechanical Engineers. She specializes in creating compelling, ATS-optimized resumes that not only pass through applicant tracking systems but also capture the attention of hiring managers. Morgan's approach combines industry best practices with personalized attention to ensure each client's resumé tells their unique story effectively.
+                  Morgan has worked with clients ranging from Michelin Star Chefs to Mechanical Engineers. She specializes in creating compelling, ATS-optimized resumés that not only pass through applicant tracking systems but also capture the attention of hiring managers. Morgan's approach combines industry best practices with personalized attention to ensure each client's resumé tells their unique story effectively.
                 </p>
               </div>
               <div className="about-features">
@@ -27,7 +27,7 @@ const About: React.FC = () => {
                     <div className="feature-icon">🎯</div>
                     <div className="feature-text">
                       <h4>ATS Optimized</h4>
-                      <p>Resumes designed to pass through applicant tracking systems</p>
+                      <p>Resumés designed to pass through applicant tracking systems</p>
                     </div>
                   </div>
                   <div className="feature">
@@ -60,6 +60,11 @@ const About: React.FC = () => {
                 <p>
                   For more information on workshops and community partnerships, please email <a href="mailto:hello@getmorganizedtoday.com">hello@getmorganizedtoday.com</a> or call Morgan at <a href="tel:914-786-2282">914-786-2282</a>
                 </p>
+                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                  <a href="tel:914-786-2282" className="btn btn-primary">
+                    📞 Call Morgan to Get Started
+                  </a>
+                </div>
               </div>
             </div>
           </div>

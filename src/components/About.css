@@ -158,18 +158,25 @@
   .about-content {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
   }
   .about-text {
     padding-right: 0;
+    width: 100%;
   }
   .about-image {
     position: static;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .headshot-container {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
   }
   .about-description p {
     font-size: 1rem;
@@ -178,5 +185,25 @@
   .community-partnerships {
     margin-top: 2rem;
     padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-image {
+    margin-bottom: 1.5rem;
+  }
+  .headshot-container {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+    margin-bottom: 1rem;
+  }
+  .headshot-container {
+    width: 140px;
+    height: 140px;
   }
 } 

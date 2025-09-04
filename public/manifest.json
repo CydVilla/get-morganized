@@ -20,6 +20,10 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#2c5aa0",
-  "background_color": "#ffffff"
+  "theme_color": "#60b382",
+  "background_color": "#60b382",
+  "description": "Professional resumé writing services by Get Morganized LLC. ATS-optimized resumés, cover letters, and LinkedIn profiles.",
+  "categories": ["business", "productivity", "professional"],
+  "lang": "en-US",
+  "orientation": "portrait-primary"
 }

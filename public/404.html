@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Get Morganized LLC</title>
+    <meta name="description" content="Professional resumé writing services by Get Morganized LLC. ATS-optimized resumés, cover letters, and LinkedIn profiles.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #60b382;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #2d5a2d 0%, #3a7a3a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: transform 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Get Morganized LLC</div>
+        <h1>404</h1>
+        <p>Sorry, the page you're looking for doesn't exist. Our website has been redesigned with a new structure.</p>
+        <p>You can find all our services and contact information on our main page.</p>
+        <a href="/" class="btn">Go to Homepage</a>
+    </div>
+    
+    <script>
+        // Redirect old URLs to appropriate sections
+        const currentPath = window.location.pathname;
+        const redirects = {
+            '/contact.html': '/#contact',
+            '/contact': '/#contact',
+            '/about.html': '/#about',
+            '/about': '/#about',
+            '/services.html': '/#about',
+            '/services': '/#about',
+            '/reviews.html': '/#reviews',
+            '/reviews': '/#reviews'
+        };
+        
+        if (redirects[currentPath]) {
+            window.location.replace(redirects[currentPath]);
+        }
+    </script>
+</body>
+</html>

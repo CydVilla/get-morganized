@@ -1,3 +1,31 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /contact.html
+Disallow: /about.html
+Disallow: /services.html
+Disallow: /reviews.html
+Disallow: /index.html
+Disallow: /old/
+Disallow: /static/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+
+# Sitemap location
+Sitemap: https://getmorganizedtoday.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

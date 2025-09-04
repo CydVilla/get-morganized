@@ -61,24 +61,26 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #2c3e50;
+  background: linear-gradient(135deg, #2d5a2d 0%, #3a7a3a 100%) !important;
+  color: white !important;
+  border: none !important;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(45, 90, 45, 0.3);
+  color: white !important;
 }
 
 .btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
+  background: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
 }
 
 .btn-secondary:hover {
-  background: white;
-  color: #2c3e50;
+  background: white !important;
+  color: #2c3e50 !important;
   transform: translateY(-2px);
 }
 

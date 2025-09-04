@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
             Fill Out the Form & Upload Your Resumé
           </a>
           <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '1rem', color: '#6c757d' }}>
-            <strong>Morgan typically responds to all inquiries promptly.</strong> If you do not hear back, please text or call her directly at <a href="tel:914-786-2282" style={{ color: '#60b382', textDecoration: 'none' }}>914-786-2282</a>
+            <strong>Morgan typically responds to all inquiries promptly.</strong> If you do not hear back, please text or call her directly at <a href="tel:914-786-2282" style={{ color: '#60b382', textDecoration: 'none' }}>914-786-2282.</a>
           </p>
         </div>
       </div>

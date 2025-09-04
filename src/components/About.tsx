@@ -58,7 +58,7 @@ const About: React.FC = () => {
                   Get Morganized LLC has provided career readiness workshops to various nonprofit organizations including Family Services of Westchester (FSW), 914United, NewComm, and the Kings County District Attorney's Office Re-Entry Bureau. Through these partnerships, Morgan teaches the fundamentals of resumé writing and provides professional resumés to individuals who are re-entering the workforce after being incarcerated or who are considered at-risk.
                 </p>
                 <p>
-                  For more information on workshops and community partnerships, please email <a href="mailto:hello@getmorganizedtoday.com">hello@getmorganizedtoday.com</a> or call Morgan at <a href="tel:914-786-2282">914-786-2282</a>
+                  For more information on workshops and community partnerships, please email <a href="mailto:hello@getmorganizedtoday.com">hello@getmorganizedtoday.com</a> or call Morgan at <a href="tel:914-786-2282">914-786-2282.</a>
                 </p>
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                   <a href="tel:914-786-2282" className="btn btn-primary">

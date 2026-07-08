@@ -1,5 +1,7 @@
 # Get Morganized - Resume Review Business Website
 
+[![CI](https://github.com/CydVilla/get-morganized/actions/workflows/ci.yml/badge.svg)](https://github.com/CydVilla/get-morganized/actions/workflows/ci.yml)
+
 A modern, responsive React website for Get Morganized LLC, a professional resume writing service.
 
 ## Features

@@ -70,7 +70,7 @@ const About: React.FC = () => {
           </div>
           <div className="about-image">
             <div className="headshot-container">
-              <img src={`${process.env.PUBLIC_URL}/headshot.jpeg`} alt="Morgan's Professional Headshot" className="headshot-img" />
+              <img src={`${process.env.PUBLIC_URL}/headshot.jpeg`} alt="Morgan, founder of Get Morganized LLC and professional resume writer" className="headshot-img" width="1698" height="2100" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

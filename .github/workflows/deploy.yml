@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+# Builds the site and publishes it to the gh-pages branch, which GitHub Pages
+# serves at the custom domain (public/CNAME). Runs automatically on every merge
+# to main, and can be triggered manually from the Actions tab.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Only one deploy at a time; let an in-progress deploy finish rather than
+# cancelling it, so the published site is never left half-updated.
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false
+
+# The GITHUB_TOKEN needs write access to push the built site to gh-pages.
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # CI=false so a stray lint warning can't block a production deploy;
+      # the CI workflow already enforces a warning-free build on pull requests.
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
+
+      # public/CNAME is copied into build/ by the build, so the custom domain
+      # is preserved automatically. Publishes the build/ output to gh-pages.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

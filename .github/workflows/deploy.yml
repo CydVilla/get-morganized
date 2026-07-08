@@ -1,10 +1,16 @@
 name: Deploy to GitHub Pages
 
-# Builds the site and publishes it to the gh-pages branch, which GitHub Pages
-# serves at the custom domain (public/CNAME). Runs automatically on every merge
-# to main, and can be triggered manually from the Actions tab.
+# Publishes the site to the gh-pages branch, which GitHub Pages serves at the
+# custom domain (public/CNAME).
+#
+# This runs *after* the CI workflow succeeds on main — it is triggered by CI
+# completing, and the job below only proceeds when that run passed. So a merge
+# to main first runs CI (build + test), and only if that is green does the
+# deploy follow. It can also be triggered manually from the Actions tab.
 on:
-  push:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
     branches: [main]
   workflow_dispatch:
 
@@ -22,10 +28,16 @@ jobs:
   deploy:
     name: Build & Deploy
     runs-on: ubuntu-latest
+    # Deploy only when CI passed (workflow_run) or when triggered manually.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Deploy the exact commit CI validated; fall back to the ref for
+          # manual (workflow_dispatch) runs, where no CI run is attached.
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -37,7 +49,7 @@ jobs:
         run: npm ci
 
       # CI=false so a stray lint warning can't block a production deploy;
-      # the CI workflow already enforces a warning-free build on pull requests.
+      # the CI workflow already enforces a warning-free build before this runs.
       - name: Build
         run: npm run build
         env:

@@ -91,9 +91,11 @@ src/
 The site is served by **GitHub Pages from the `gh-pages` branch**, at the custom
 domain defined in `public/CNAME`.
 
-- **Automatic:** every merge to `main` runs `.github/workflows/deploy.yml`, which
-  builds the app and publishes `build/` to the `gh-pages` branch. You can also
-  trigger it manually from **Actions → Deploy to GitHub Pages → Run workflow**.
+- **Automatic:** on every merge to `main`, the **CI** workflow runs first
+  (build + test). Only if it passes does `.github/workflows/deploy.yml` run —
+  it is triggered by CI's successful completion — building the app and
+  publishing `build/` to the `gh-pages` branch. You can also trigger a deploy
+  manually from **Actions → Deploy to GitHub Pages → Run workflow**.
 - **Manual (local):** `npm run deploy` does the same thing from your machine using
   the `gh-pages` package.
 

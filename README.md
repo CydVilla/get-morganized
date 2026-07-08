@@ -1,154 +1,137 @@
-# Get Morganized - Resume Review Business Website
+# Get Morganized — Resume Writing Business Website
 
 [![CI](https://github.com/CydVilla/get-morganized/actions/workflows/ci.yml/badge.svg)](https://github.com/CydVilla/get-morganized/actions/workflows/ci.yml)
 
-A modern, responsive React website for Get Morganized LLC, a professional resume writing service.
+A modern, responsive single-page React website for **Get Morganized LLC**, a professional resume writing service. Live at **[getmorganizedtoday.com](https://getmorganizedtoday.com)**.
 
-## Features
+## Overview
 
-- **Hero Section**: Big hero image with compelling copy (inspired by 914United)
-- **Services Section**: Clean, card-based layout showcasing resume services
-- **About Section**: Company story with placeholder for Morgan's photo
-- **Slideshow**: Image carousel for work samples and client photos
-- **Reviews Section**: Google Reviews integration (ready for API setup)
-- **Contact Form**: Professional contact form with business information
-- **Responsive Design**: Mobile-first approach that works on all devices
-- **Modern UI**: Clean, professional design inspired by TopStack Resume
+The site is a single page with anchor-linked sections:
+
+- **Hero** — headline, call to action, and headline stats
+- **About** — company story, why-choose-us features, "Meet Morgan", and community partnerships
+- **Reviews** — Google reviews embedded via an [Elfsight](https://elfsight.com/) widget
+- **Instagram** — Instagram feed embedded via an Elfsight widget
+- **Contact** — links to a Google Form where clients submit details and upload their resume
+- **Header / Footer** — navigation and business contact info
+
+## Tech Stack
+
+- **React 19** + **TypeScript 5**
+- **Create React App** (`react-scripts` 5) for build/dev tooling
+- **CSS3** — one stylesheet per component, mobile-first responsive design
+- **GitHub Pages** hosting with a custom domain, deployed automatically via GitHub Actions
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
-- npm or yarn
+- Node.js 18+ (CI builds on Node 22)
+- npm
 
 ### Installation
 
-1. Navigate to the project directory:
-   ```bash
-   cd morganized
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## Customization Guide
-
-### 1. Replace Placeholder Images
-
-The website currently uses placeholder images. Replace them with your actual content:
-
-- **Hero Background**: Update the gradient in `src/components/Hero.css` or add a background image
-- **Morgan's Photo**: Replace the placeholder in the About section with Morgan's professional headshot
-- **Work Samples**: Add actual resume samples and before/after photos to the slideshow
-- **Client Photos**: Add client photos to the slideshow section
-
-### 2. Google Reviews Integration
-
-To integrate real Google Reviews:
-
-1. Set up a Google My Business API account
-2. Get your API credentials
-3. Create a `.env` file in the root directory:
-   ```
-   REACT_APP_GOOGLE_PLACES_API_KEY=your_api_key_here
-   ```
-4. Update the Reviews component to fetch real data from the Google Places API
-
-### 3. Update Business Information
-
-Update the following information throughout the website:
-
-- **Phone Number**: 914-786-2282 (already set)
-- **Email**: info@getmorganizedtoday.com (already set)
-- **Location**: Greater New York City Area (already set)
-- **Services and Pricing**: Update in the Services component
-- **Social Media Links**: Add actual social media URLs in the Footer
-
-### 4. Domain Configuration
-
-To use your Weebly domain:
-
-1. Build the production version:
-   ```bash
-   npm run build
-   ```
-
-2. Upload the contents of the `build` folder to your Weebly hosting
-3. Configure your domain to point to the uploaded files
-
-### 5. Contact Form Setup
-
-The contact form currently shows an alert. To make it functional:
-
-1. Set up a backend service (e.g., Netlify Forms, Formspree, or your own server)
-2. Update the form submission handler in `src/components/Contact.tsx`
-3. Add form validation and error handling
-
-## File Structure
-
+```bash
+npm install
 ```
-src/
-├── components/
-│   ├── Header.tsx          # Navigation header
-│   ├── Hero.tsx           # Hero section with big image
-│   ├── Services.tsx       # Services showcase
-│   ├── About.tsx          # About section
-│   ├── Slideshow.tsx      # Image carousel
-│   ├── Reviews.tsx        # Google reviews
-│   ├── Contact.tsx        # Contact form
-│   ├── Footer.tsx         # Footer
-│   └── *.css              # Component-specific styles
-├── App.tsx                # Main app component
-├── App.css                # Global styles
-└── index.tsx              # App entry point
+
+> This project pins TypeScript 5 while `react-scripts` still advertises an older
+> optional TypeScript peer range. An `.npmrc` sets `legacy-peer-deps=true` so
+> `npm install` and `npm ci` behave consistently — no extra flags needed.
+
+### Run locally
+
+```bash
+npm start
 ```
+
+Then open [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
-- `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App (not recommended)
+- `npm start` — run the app in development mode with hot reload
+- `npm test` — run the test suite (Testing Library + Jest)
+- `npm run build` — produce an optimized production build in `build/`
+- `npm run deploy` — build and publish to the `gh-pages` branch manually (see below)
 
-## Technologies Used
+## Project Structure
 
-- **React 18** - Frontend framework
-- **TypeScript** - Type safety
-- **React Router** - Navigation
-- **React Slick** - Image carousel
-- **CSS3** - Styling with modern features
-- **Responsive Design** - Mobile-first approach
+```
+public/
+├── index.html          # HTML template: meta tags, Open Graph, JSON-LD structured data
+├── robots.txt          # Crawler directives
+├── sitemap.xml         # Sitemap for search engines
+├── manifest.json       # PWA metadata
+├── CNAME               # Custom domain (getmorganizedtoday.com)
+├── 404.html            # Fallback page + client-side redirects for old URLs
+├── headshot.jpeg       # Morgan's photo (About section)
+└── logo-morganized.png # Logo / social share image
+
+src/
+├── components/
+│   ├── Header.tsx      # Navigation header with mobile menu
+│   ├── Hero.tsx        # Hero section
+│   ├── About.tsx       # About section
+│   ├── Reviews.tsx     # Elfsight Google reviews widget
+│   ├── InstagramFeed.tsx # Elfsight Instagram widget
+│   ├── Contact.tsx     # Google Form call to action
+│   ├── Footer.tsx      # Footer with contact + social links
+│   └── *.css           # Component-specific styles
+├── App.tsx             # Composes the sections into the page
+├── App.css             # Global styles (container, buttons, section headers)
+└── index.tsx           # App entry point
+
+.github/workflows/
+├── ci.yml              # Build + test on every push/PR to main
+└── deploy.yml          # Build + deploy to GitHub Pages on merge to main
+```
+
+## Deployment
+
+The site is served by **GitHub Pages from the `gh-pages` branch**, at the custom
+domain defined in `public/CNAME`.
+
+- **Automatic:** every merge to `main` runs `.github/workflows/deploy.yml`, which
+  builds the app and publishes `build/` to the `gh-pages` branch. You can also
+  trigger it manually from **Actions → Deploy to GitHub Pages → Run workflow**.
+- **Manual (local):** `npm run deploy` does the same thing from your machine using
+  the `gh-pages` package.
+
+`public/CNAME` is copied into the build output, so the custom domain is preserved
+on every deploy.
+
+## Common Updates
+
+### Business information
+
+Phone (`914-786-2282`), email (`hello@getmorganizedtoday.com`), and location live
+in `src/components/Footer.tsx`, `src/components/About.tsx`, and
+`src/components/Contact.tsx`. Keep the matching values in the JSON-LD structured
+data in `public/index.html` in sync.
+
+### Reviews & Instagram widgets
+
+Both are [Elfsight](https://elfsight.com/) apps loaded from
+`static.elfsight.com`. Edit the widget content in the Elfsight dashboard; to swap
+a widget, update its `elfsight-app-<id>` class in `Reviews.tsx` /
+`InstagramFeed.tsx`.
+
+### Contact form
+
+`src/components/Contact.tsx` links to a Google Form for resume submissions. Update
+the form URL there to change the destination.
+
+### SEO
+
+Metadata, Open Graph/Twitter tags, and JSON-LD structured data are in
+`public/index.html`; crawler and indexing config is in `public/robots.txt` and
+`public/sitemap.xml`.
 
 ## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Optimization
-
-The website is optimized for:
-- Fast loading times
-- SEO-friendly structure
-- Mobile performance
-- Accessibility standards
-
-## Support
-
-For questions or customization help, contact the development team or refer to the React documentation.
+Latest Chrome, Firefox, Safari, and Edge, plus modern mobile browsers
+(iOS Safari, Chrome for Android).
 
 ## License
 
-This project is created for Get Morganized LLC. All rights reserved.
+Created for Get Morganized LLC. All rights reserved.

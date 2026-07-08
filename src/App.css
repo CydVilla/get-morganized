@@ -72,35 +72,6 @@ body {
   color: white !important;
 }
 
-.btn-secondary {
-  background: transparent !important;
-  color: white !important;
-  border: 2px solid white !important;
-}
-
-.btn-secondary:hover {
-  background: white !important;
-  color: #2c3e50 !important;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
-}
-
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;

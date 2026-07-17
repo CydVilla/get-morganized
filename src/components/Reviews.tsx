@@ -3,9 +3,9 @@ import './Reviews.css';
 
 const Reviews: React.FC = () => {
   useEffect(() => {
-    // Dynamically load the Elfsight script
+    // Dynamically load the StellaFrame script
     const script = document.createElement('script');
-    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.src = 'https://app.stellaframe.com/widget.js';
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -20,7 +20,8 @@ const Reviews: React.FC = () => {
           <h2>What Our Clients Say</h2>
           <p>Real testimonials from satisfied clients</p>
         </div>
-        <div className="elfsight-app-e3ffd100-baff-4a59-95b9-2f9dbc0fb359" data-elfsight-app-lazy></div>
+        {/* StellaFrame */}
+        <div data-stellaframe="wgt_gcf177fbll0q"></div>
       </div>
     </section>
   );

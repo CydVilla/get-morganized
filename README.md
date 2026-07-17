@@ -10,8 +10,8 @@ The site is a single page with anchor-linked sections:
 
 - **Hero** — headline, call to action, and headline stats
 - **About** — company story, why-choose-us features, "Meet Morgan", and community partnerships
-- **Reviews** — Google reviews embedded via an [Elfsight](https://elfsight.com/) widget
-- **Instagram** — Instagram feed embedded via an Elfsight widget
+- **Reviews** — Google reviews embedded via a [StellaFrame](https://stellaframe.com/) widget
+- **Instagram** — Instagram feed embedded via a StellaFrame widget
 - **Contact** — links to a Google Form where clients submit details and upload their resume
 - **Header / Footer** — navigation and business contact info
 
@@ -72,8 +72,8 @@ src/
 │   ├── Header.tsx      # Navigation header with mobile menu
 │   ├── Hero.tsx        # Hero section
 │   ├── About.tsx       # About section
-│   ├── Reviews.tsx     # Elfsight Google reviews widget
-│   ├── InstagramFeed.tsx # Elfsight Instagram widget
+│   ├── Reviews.tsx     # StellaFrame Google reviews widget
+│   ├── InstagramFeed.tsx # StellaFrame Instagram widget
 │   ├── Contact.tsx     # Google Form call to action
 │   ├── Footer.tsx      # Footer with contact + social links
 │   └── *.css           # Component-specific styles
@@ -113,10 +113,10 @@ data in `public/index.html` in sync.
 
 ### Reviews & Instagram widgets
 
-Both are [Elfsight](https://elfsight.com/) apps loaded from
-`static.elfsight.com`. Edit the widget content in the Elfsight dashboard; to swap
-a widget, update its `elfsight-app-<id>` class in `Reviews.tsx` /
-`InstagramFeed.tsx`.
+Both are [StellaFrame](https://stellaframe.com/) widgets loaded from
+`app.stellaframe.com`. Edit the widget content in the StellaFrame dashboard; to
+swap a widget, update its `data-stellaframe="wgt_<id>"` attribute in
+`Reviews.tsx` / `InstagramFeed.tsx`.
 
 ### Contact form
 

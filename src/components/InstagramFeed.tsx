@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const InstagramFeed: React.FC = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.src = 'https://app.stellaframe.com/widget.js';
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -18,7 +18,8 @@ const InstagramFeed: React.FC = () => {
           <h2>Follow Us on Instagram</h2>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-          <div className="elfsight-app-3e74aa70-a0c7-4f20-be7d-958837213359" data-elfsight-app-lazy></div>
+          {/* StellaFrame */}
+          <div data-stellaframe="wgt_o6x4injfra4t"></div>
         </div>
       </div>
     </section>

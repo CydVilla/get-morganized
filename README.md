@@ -114,9 +114,10 @@ data in `public/index.html` in sync.
 ### Reviews & Instagram widgets
 
 Both are [StellaFrame](https://stellaframe.com/) widgets loaded from
-`app.stellaframe.com`. Edit the widget content in the StellaFrame dashboard; to
-swap a widget, update its `data-stellaframe="wgt_<id>"` attribute in
-`Reviews.tsx` / `InstagramFeed.tsx`.
+`app.stellaframe.com`; `src/lib/stellaframe.ts` injects the loader script once
+for the whole page. Edit the widget content in the StellaFrame dashboard; to
+swap a widget, update its `data-stellaframe="wgt_<id>"` attribute (and matching
+`data-sf-kind`) in `Reviews.tsx` / `InstagramFeed.tsx`.
 
 ### Contact form
 

@@ -1,16 +1,10 @@
 import React, { useEffect } from 'react';
 import './Reviews.css';
+import { ensureStellaFrame } from '../lib/stellaframe';
 
 const Reviews: React.FC = () => {
   useEffect(() => {
-    // Dynamically load the StellaFrame script
-    const script = document.createElement('script');
-    script.src = 'https://app.stellaframe.com/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    ensureStellaFrame();
   }, []);
 
   return (
@@ -20,11 +14,11 @@ const Reviews: React.FC = () => {
           <h2>What Our Clients Say</h2>
           <p>Real testimonials from satisfied clients</p>
         </div>
-        {/* StellaFrame */}
-        <div data-stellaframe="wgt_gcf177fbll0q"></div>
+        {/* StellaFrame — data-sf-kind lets the loader fetch the renderer alongside the data */}
+        <div data-stellaframe="wgt_gcf177fbll0q" data-sf-kind="reviews"></div>
       </div>
     </section>
   );
 };
 
-export default Reviews; 
+export default Reviews;

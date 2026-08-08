@@ -102,3 +102,33 @@ html {
     padding: 0 15px;
   }
 }
+
+/* StellaFrame widget placeholders.
+   The widget renders asynchronously into a shadow root once it nears the
+   viewport, so reserve its height up front — otherwise it pops in and shoves
+   everything below it down (layout shift). These floors are measured from the
+   widgets' actual rendered heights at each breakpoint; min-height is only a
+   floor, so a taller widget still grows past it. */
+.sf-widget--reviews {
+  min-height: 460px;
+}
+
+.sf-widget--instagram {
+  min-height: 480px;
+}
+
+@media (max-width: 1024px) {
+  .sf-widget--instagram {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sf-widget--reviews {
+    min-height: 410px;
+  }
+
+  .sf-widget--instagram {
+    min-height: 280px;
+  }
+}

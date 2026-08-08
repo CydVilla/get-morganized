@@ -9,6 +9,8 @@
  * widget on the page.
  */
 
+import { useEffect, useRef } from 'react';
+
 const WIDGET_SRC = 'https://app.stellaframe.com/widget.js';
 
 declare global {
@@ -29,4 +31,60 @@ export function ensureStellaFrame(): void {
   script.src = WIDGET_SRC;
   script.async = true;
   document.body.appendChild(script);
+}
+
+/**
+ * Defers a widget until it is close to the viewport.
+ *
+ * Both widgets sit well below the fold, and the Instagram one alone pulls
+ * ~2.8 MB of media. The loader has no lazy mode of its own: its scan() mounts
+ * *every* `[data-stellaframe]` placeholder on the page at once, so simply
+ * delaying the script would still mount both widgets as soon as either one
+ * needed it. Instead we render the placeholder without the attribute the
+ * scanner looks for, and only stamp it on once the element nears the viewport.
+ *
+ * Returns the ref to attach to the placeholder element.
+ */
+export function useStellaFrameWidget(
+  widgetId: string,
+  kind: string,
+  rootMargin = '400px'
+) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Already activated (e.g. an effect re-run) — the loader owns it now.
+    if (el.dataset.stellaframe) return;
+
+    const activate = () => {
+      if (el.dataset.stellaframe) return;
+      // data-sf-kind lets the loader fetch the renderer alongside the widget
+      // data instead of waiting to learn the kind from the response.
+      el.dataset.sfKind = kind;
+      el.dataset.stellaframe = widgetId;
+      ensureStellaFrame();
+    };
+
+    if (typeof IntersectionObserver === 'undefined') {
+      activate();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          activate();
+        }
+      },
+      { rootMargin }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [widgetId, kind, rootMargin]);
+
+  return ref;
 }

@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-container">
         <div className="logo-area">
-          <img src={`${process.env.PUBLIC_URL}/logo-morganized.png`} alt="Get Morganized LLC logo" className="logo-img prominent" width="911" height="910" decoding="async" />
+          <img src={`${process.env.PUBLIC_URL}/logo-header.png`} alt="Get Morganized LLC logo" className="logo-img prominent" width="210" height="210" decoding="async" fetchPriority="high" />
           <span className="navbar-title">GET MORGANIZED LLC</span>
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

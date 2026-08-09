@@ -114,10 +114,26 @@ data in `public/index.html` in sync.
 ### Reviews & Instagram widgets
 
 Both are [StellaFrame](https://stellaframe.com/) widgets loaded from
-`app.stellaframe.com`; `src/lib/stellaframe.ts` injects the loader script once
-for the whole page. Edit the widget content in the StellaFrame dashboard; to
-swap a widget, update its `data-stellaframe="wgt_<id>"` attribute (and matching
-`data-sf-kind`) in `Reviews.tsx` / `InstagramFeed.tsx`.
+`app.stellaframe.com`. `src/lib/stellaframe.ts` owns the integration: it injects
+the loader script once for the whole page, and its `useStellaFrameWidget` hook
+defers each widget until it nears the viewport.
+
+Edit the widget content in the StellaFrame dashboard; to swap a widget, change
+the id and kind passed to `useStellaFrameWidget` in `Reviews.tsx` /
+`InstagramFeed.tsx`.
+
+Two things to know before changing this:
+
+- **The placeholder starts without `data-stellaframe`.** The loader's `scan()`
+  mounts *every* placeholder on the page at once, so it has no per-widget lazy
+  mode — deferring the script alone would still mount both widgets as soon as
+  either was needed. The hook withholds the attribute and stamps it on at the
+  viewport instead. Putting `data-stellaframe` straight in the JSX would undo
+  the deferral; the Instagram widget alone pulls ~2.8 MB of media.
+- **The `.sf-widget--*` min-heights in `App.css` are measured, not guessed.**
+  They reserve each widget's real rendered height so it doesn't shove the page
+  down when it appears (measured CLS is 0). Re-measure if a widget's layout
+  or content changes materially.
 
 ### Contact form
 

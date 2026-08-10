@@ -12,12 +12,16 @@
 import { useEffect, useRef } from 'react';
 
 const WIDGET_SRC = 'https://app.stellaframe.com/widget.js';
+const RETRY_DELAY_MS = 3000;
+const MAX_ATTEMPTS = 3;
 
 declare global {
   interface Window {
     StellaFrame?: { scan?: () => void };
   }
 }
+
+let attempts = 0;
 
 export function ensureStellaFrame(): void {
   if (document.querySelector(`script[src="${WIDGET_SRC}"]`)) {
@@ -27,9 +31,26 @@ export function ensureStellaFrame(): void {
     window.StellaFrame?.scan?.();
     return;
   }
+  if (attempts >= MAX_ATTEMPTS) return;
+  attempts += 1;
+
   const script = document.createElement('script');
   script.src = WIDGET_SRC;
   script.async = true;
+  script.onerror = () => {
+    // A failed load leaves the tag in the DOM, where the check above reads it
+    // as "the loader is already here" — every later call would no-op and no
+    // widget would ever mount again. Drop it so the next call gets a fresh
+    // attempt. This matters more now that the first fetch happens at idle,
+    // early in the page's life and far from anyone watching.
+    script.remove();
+    prewarmScheduled = false;
+    // A widget that already activated has nothing left to retry on its behalf:
+    // the observer that fired for it was disconnected. Retry for it.
+    if (document.querySelector('[data-stellaframe]:not([data-rw-ready])')) {
+      window.setTimeout(ensureStellaFrame, RETRY_DELAY_MS);
+    }
+  };
   document.body.appendChild(script);
 }
 
@@ -54,9 +75,10 @@ export function prewarmStellaFrame(): void {
   if (prewarmScheduled || typeof window === 'undefined') return;
   prewarmScheduled = true;
 
-  const idle = window.requestIdleCallback;
-  if (typeof idle === 'function') {
-    idle(() => ensureStellaFrame(), { timeout: 3000 });
+  // Called on `window`, not detached — some engines reject a Window method
+  // invoked without its receiver.
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(() => ensureStellaFrame(), { timeout: 3000 });
   } else {
     // Safari has no requestIdleCallback — approximate it, staying clear of the
     // initial render.

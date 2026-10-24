@@ -1,7 +1,13 @@
+/* The header is fixed and 80px tall, so pad it out of the hero and centre the
+   content in the space below it. On short viewports (the iPhone Duo's cover
+   screen and unfolded landscape screen are both under 700px tall) centring
+   across the full height tucked the headline under the header. svh tracks the
+   viewport with Safari's toolbars showing; vh is the fallback. */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 80px 0 40px;
   display: flex;
   align-items: center;
   justify-content: center;

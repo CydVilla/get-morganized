@@ -72,9 +72,11 @@ body {
   color: white !important;
 }
 
-/* Smooth Scrolling */
+/* Smooth Scrolling. scroll-padding-top keeps anchor jumps clear of the 80px
+   fixed header, which otherwise covers the top of the target section. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Responsive Design */

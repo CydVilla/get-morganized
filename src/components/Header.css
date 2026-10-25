@@ -89,11 +89,15 @@
   width: 100%;
 }
 
+/* The bars are only 25x17; the padding grows the tap target to 45x45 (Apple's
+   minimum is 44pt) and the negative margin keeps the bars where they were. */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
+  padding: 14px 10px;
+  margin-right: -10px;
 }
 
 .mobile-menu-toggle span {
@@ -119,6 +123,13 @@
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* The menu hangs off the fixed header, so the page can't scroll it into
+       view. On a short screen (an iPhone Duo folded and held sideways is
+       ~340-370 high) its ~420px ran off the bottom, so let it scroll itself. */
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .nav.nav-open {

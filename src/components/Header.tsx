@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
             <li><a href="#reviews" onClick={() => setIsMenuOpen(false)}>Reviews</a></li>
-            <li><a href="#instagram">Social</a></li>
+            <li><a href="#instagram" onClick={() => setIsMenuOpen(false)}>Social</a></li>
             <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
           </ul>
         </nav>
